@@ -19,6 +19,7 @@
 		EFE167891F693D6300CCE64C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167881F693D6300CCE64C /* Router.swift */; };
 		EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678B1F6947DF00CCE64C /* LocalStore.swift */; };
 		EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */; };
+		EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167921F69512B00CCE64C /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EFE167881F693D6300CCE64C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EFE1678B1F6947DF00CCE64C /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		EFE167921F69512B00CCE64C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */,
 				EF9E62C31F683E71001ECFF5 /* LoginViewController.swift */,
+				EFE167921F69512B00CCE64C /* MapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */,
 				EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */,
 				EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */,
+				EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */,
 				EF9E62C41F683E71001ECFF5 /* LoginViewController.swift in Sources */,
 				EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */,
 				EFE167891F693D6300CCE64C /* Router.swift in Sources */,

@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="882" y="-561"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="0nM-GV-CCb">
             <objects>
-                <viewController id="KVQ-LL-Jvh" sceneMemberID="viewController">
+                <viewController id="KVQ-LL-Jvh" customClass="MapViewController" customModule="vitaliy_yarkun_SimplePins" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UW6-PH-Joh"/>
                         <viewControllerLayoutGuide type="bottom" id="gKx-QQ-gHe"/>

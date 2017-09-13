@@ -44,6 +44,7 @@ class LoginViewController: UIViewController {
         
         if let codeString = array?.last {
             LocalStore().loginCode = codeString
+            navigationController?.popViewController(animated: true)
         }
     }   
 }
