@@ -12,6 +12,7 @@ import CoreData
 struct Global {
     static var facebookClientID = "1660470584023500"
     static var facebookRedirectURI = "fb1660470584023500://authorize"
+    static var facebookClientSecret = "0b09d03d3583e666733c5eda5c51dfbb"
 }
 
 @UIApplicationMain

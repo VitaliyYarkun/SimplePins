@@ -20,6 +20,7 @@
 		EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678B1F6947DF00CCE64C /* LocalStore.swift */; };
 		EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */; };
 		EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167921F69512B00CCE64C /* MapViewController.swift */; };
+		EFE167961F6951DB00CCE64C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167951F6951DB00CCE64C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EFE1678B1F6947DF00CCE64C /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EFE167921F69512B00CCE64C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EFE167951F6951DB00CCE64C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		EF9E62C01F683E71001ECFF5 /* vitaliy_yarkun_SimplePins */ = {
 			isa = PBXGroup;
 			children = (
+				EFE167941F6951CD00CCE64C /* Models */,
 				EFE167911F694D5F00CCE64C /* Modules */,
 				EFE1678F1F694D2E00CCE64C /* ViewControllers */,
 				EFE167901F694D4600CCE64C /* SupportingFiles */,
@@ -139,6 +142,14 @@
 				EFE1678A1F69458D00CCE64C /* Network */,
 			);
 			name = Modules;
+			sourceTree = "<group>";
+		};
+		EFE167941F6951CD00CCE64C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EFE167951F6951DB00CCE64C /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				EF9E62C41F683E71001ECFF5 /* LoginViewController.swift in Sources */,
 				EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */,
 				EFE167891F693D6300CCE64C /* Router.swift in Sources */,
+				EFE167961F6951DB00CCE64C /* User.swift in Sources */,
 				EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

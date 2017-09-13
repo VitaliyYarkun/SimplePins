@@ -12,8 +12,8 @@ class LocalStore {
     //MARK: - Constans
     private struct Constans {
         struct Keys {
-            static let loginCode = "VY.LocalStore.code"
-            
+            static let loginCode = "VY.LocalStore.loginCode"
+            static let accessToken = "VY.LocalStore.accessToken"
         }
     }
     
@@ -23,6 +23,16 @@ class LocalStore {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Constans.Keys.loginCode)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var accessToken: String {
+        get {
+            return UserDefaults.standard.string(forKey: Constans.Keys.accessToken) ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Constans.Keys.accessToken)
             UserDefaults.standard.synchronize()
         }
     }
