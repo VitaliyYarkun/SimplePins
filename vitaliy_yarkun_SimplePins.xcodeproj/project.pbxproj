@@ -11,12 +11,14 @@
 		EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */; };
 		EF9AC7C41F6904F2001F6C86 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */; };
 		EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */; };
-		EF9E62C41F683E71001ECFF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C31F683E71001ECFF5 /* ViewController.swift */; };
+		EF9E62C41F683E71001ECFF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C31F683E71001ECFF5 /* LoginViewController.swift */; };
 		EF9E62C71F683E71001ECFF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62C51F683E71001ECFF5 /* Main.storyboard */; };
 		EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C81F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld */; };
 		EF9E62CC1F683E71001ECFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62CB1F683E71001ECFF5 /* Assets.xcassets */; };
 		EF9E62CF1F683E71001ECFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62CD1F683E71001ECFF5 /* LaunchScreen.storyboard */; };
 		EFE167891F693D6300CCE64C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167881F693D6300CCE64C /* Router.swift */; };
+		EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678B1F6947DF00CCE64C /* LocalStore.swift */; };
+		EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,13 +29,15 @@
 		EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		EF9E62BE1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vitaliy_yarkun_SimplePins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF9E62C31F683E71001ECFF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF9E62C31F683E71001ECFF5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EF9E62C61F683E71001ECFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF9E62C91F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = vitaliy_yarkun_SimplePins.xcdatamodel; sourceTree = "<group>"; };
 		EF9E62CB1F683E71001ECFF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF9E62CE1F683E71001ECFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9E62D01F683E71001ECFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFE167881F693D6300CCE64C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		EFE1678B1F6947DF00CCE64C /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,18 +90,52 @@
 		EF9E62C01F683E71001ECFF5 /* vitaliy_yarkun_SimplePins */ = {
 			isa = PBXGroup;
 			children = (
+				EFE167911F694D5F00CCE64C /* Modules */,
+				EFE1678F1F694D2E00CCE64C /* ViewControllers */,
+				EFE167901F694D4600CCE64C /* SupportingFiles */,
 				EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */,
-				EF9E62C31F683E71001ECFF5 /* ViewController.swift */,
+			);
+			path = vitaliy_yarkun_SimplePins;
+			sourceTree = "<group>";
+		};
+		EFE1678A1F69458D00CCE64C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */,
+				EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */,
+				EFE167881F693D6300CCE64C /* Router.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		EFE1678F1F694D2E00CCE64C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */,
+				EF9E62C31F683E71001ECFF5 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EFE167901F694D4600CCE64C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				EF9E62C51F683E71001ECFF5 /* Main.storyboard */,
 				EF9E62CB1F683E71001ECFF5 /* Assets.xcassets */,
 				EF9E62CD1F683E71001ECFF5 /* LaunchScreen.storyboard */,
 				EF9E62D01F683E71001ECFF5 /* Info.plist */,
 				EF9E62C81F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld */,
-				EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */,
-				EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */,
-				EFE167881F693D6300CCE64C /* Router.swift */,
 			);
-			path = vitaliy_yarkun_SimplePins;
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		EFE167911F694D5F00CCE64C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EFE1678B1F6947DF00CCE64C /* LocalStore.swift */,
+				EFE1678A1F69458D00CCE64C /* Network */,
+			);
+			name = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,8 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF9AC7C41F6904F2001F6C86 /* ServerManager.swift in Sources */,
+				EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */,
+				EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */,
 				EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */,
-				EF9E62C41F683E71001ECFF5 /* ViewController.swift in Sources */,
+				EF9E62C41F683E71001ECFF5 /* LoginViewController.swift in Sources */,
 				EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */,
 				EFE167891F693D6300CCE64C /* Router.swift in Sources */,
 				EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */,
