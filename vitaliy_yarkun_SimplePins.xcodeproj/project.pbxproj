@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CBB948EA74B5A582A681A1C /* Pods_vitaliy_yarkun_SimplePins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF66530809A1C917E722724 /* Pods_vitaliy_yarkun_SimplePins.framework */; };
+		EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */; };
+		EF9AC7C41F6904F2001F6C86 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */; };
 		EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */; };
 		EF9E62C41F683E71001ECFF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C31F683E71001ECFF5 /* ViewController.swift */; };
 		EF9E62C71F683E71001ECFF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62C51F683E71001ECFF5 /* Main.storyboard */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FE216A7BAE6F0A5038A2F8D /* Pods-vitaliy_yarkun_SimplePins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vitaliy_yarkun_SimplePins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vitaliy_yarkun_SimplePins/Pods-vitaliy_yarkun_SimplePins.debug.xcconfig"; sourceTree = "<group>"; };
+		3AF66530809A1C917E722724 /* Pods_vitaliy_yarkun_SimplePins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vitaliy_yarkun_SimplePins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2654A1661ABE756BA0446E /* Pods-vitaliy_yarkun_SimplePins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vitaliy_yarkun_SimplePins.release.xcconfig"; path = "Pods/Target Support Files/Pods-vitaliy_yarkun_SimplePins/Pods-vitaliy_yarkun_SimplePins.release.xcconfig"; sourceTree = "<group>"; };
+		EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		EF9E62BE1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vitaliy_yarkun_SimplePins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF9E62C31F683E71001ECFF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CBB948EA74B5A582A681A1C /* Pods_vitaliy_yarkun_SimplePins.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B311B217F378FFA00296046 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AF66530809A1C917E722724 /* Pods_vitaliy_yarkun_SimplePins.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E283B247654BA4803CC7B359 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FE216A7BAE6F0A5038A2F8D /* Pods-vitaliy_yarkun_SimplePins.debug.xcconfig */,
+				7F2654A1661ABE756BA0446E /* Pods-vitaliy_yarkun_SimplePins.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EF9E62B51F683E71001ECFF5 = {
 			isa = PBXGroup;
 			children = (
 				EF9E62C01F683E71001ECFF5 /* vitaliy_yarkun_SimplePins */,
 				EF9E62BF1F683E71001ECFF5 /* Products */,
+				E283B247654BA4803CC7B359 /* Pods */,
+				0B311B217F378FFA00296046 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +91,8 @@
 				EF9E62CD1F683E71001ECFF5 /* LaunchScreen.storyboard */,
 				EF9E62D01F683E71001ECFF5 /* Info.plist */,
 				EF9E62C81F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld */,
+				EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */,
+				EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */,
 			);
 			path = vitaliy_yarkun_SimplePins;
 			sourceTree = "<group>";
@@ -74,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF9E62D31F683E71001ECFF5 /* Build configuration list for PBXNativeTarget "vitaliy_yarkun_SimplePins" */;
 			buildPhases = (
+				CFAE4A230BFBF2FA4AC5A7B4 /* [CP] Check Pods Manifest.lock */,
 				EF9E62BA1F683E71001ECFF5 /* Sources */,
 				EF9E62BB1F683E71001ECFF5 /* Frameworks */,
 				EF9E62BC1F683E71001ECFF5 /* Resources */,
+				E561491E02B98BC46CB3E5A3 /* [CP] Embed Pods Frameworks */,
+				10C16A3EE30C482BBB7ADF83 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,11 +168,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10C16A3EE30C482BBB7ADF83 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vitaliy_yarkun_SimplePins/Pods-vitaliy_yarkun_SimplePins-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFAE4A230BFBF2FA4AC5A7B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E561491E02B98BC46CB3E5A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vitaliy_yarkun_SimplePins/Pods-vitaliy_yarkun_SimplePins-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF9E62BA1F683E71001ECFF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9AC7C41F6904F2001F6C86 /* ServerManager.swift in Sources */,
+				EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */,
 				EF9E62C41F683E71001ECFF5 /* ViewController.swift in Sources */,
 				EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */,
 				EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */,
@@ -263,10 +346,12 @@
 		};
 		EF9E62D41F683E71001ECFF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FE216A7BAE6F0A5038A2F8D /* Pods-vitaliy_yarkun_SimplePins.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M925H99G8E;
 				INFOPLIST_FILE = vitaliy_yarkun_SimplePins/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitaliyyarkun.vitaliy-yarkun-SimplePins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,10 +361,12 @@
 		};
 		EF9E62D51F683E71001ECFF5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F2654A1661ABE756BA0446E /* Pods-vitaliy_yarkun_SimplePins.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M925H99G8E;
 				INFOPLIST_FILE = vitaliy_yarkun_SimplePins/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitaliyyarkun.vitaliy-yarkun-SimplePins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -306,6 +393,7 @@
 				EF9E62D51F683E71001ECFF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
