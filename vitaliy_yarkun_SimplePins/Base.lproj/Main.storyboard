@@ -59,12 +59,23 @@
                     <view key="view" contentMode="scaleToFill" id="Hda-2N-70I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DEJ-R6-uwc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gKx-QQ-gHe" firstAttribute="top" secondItem="DEJ-R6-uwc" secondAttribute="bottom" id="Nka-N8-qop"/>
+                            <constraint firstItem="DEJ-R6-uwc" firstAttribute="leading" secondItem="Hda-2N-70I" secondAttribute="leading" id="SvE-gw-Mnt"/>
+                            <constraint firstAttribute="trailing" secondItem="DEJ-R6-uwc" secondAttribute="trailing" id="o4J-Nv-Pyj"/>
+                            <constraint firstItem="DEJ-R6-uwc" firstAttribute="top" secondItem="UW6-PH-Joh" secondAttribute="bottom" id="tCn-6M-AW2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUQ-fm-roG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="-820"/>
+            <point key="canvasLocation" x="1805.5999999999999" y="-820.83958020989508"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
