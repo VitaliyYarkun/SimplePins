@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class ViewController: UIViewController, UIWebViewDelegate {
 
@@ -17,18 +16,22 @@ class ViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         
         webView.delegate = self
-        let url: URL = URL(string: "https://graph.facebook.com/oauth/authorize?client_id=1660470584023500&display=popup&response_type=code&redirect_uri=fb1660470584023500://authorize")!
-        let request: URLRequest = URLRequest(url: url)
-        //_ = Alamofire.request(request)
+        var request: URLRequest?
         
-        webView.loadRequest(request)
+        do {
+            request = try Router.login(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI).asURLRequest()
+        } catch {
+           print("Error")
+        }
+        
+        webView.loadRequest(request!)
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         print("\(String(describing: request.url?.absoluteString))")
         var array: Array<String>?
-        if request.url?.absoluteString.range(of:"fb1660470584023500://authorize/?code=") != nil {
+        if request.url?.absoluteString.range(of:Global.facebookRedirectURI) != nil {
           array  = request.url?.absoluteString.components(separatedBy: "code=")
         }
         if let codeString = array?.last {
@@ -36,11 +39,5 @@ class ViewController: UIViewController, UIWebViewDelegate {
         }
         return true
     }
-    
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        
-        //print("\(String(describing: webView.request?.url?.absoluteString))")
-    }
-
 }
 

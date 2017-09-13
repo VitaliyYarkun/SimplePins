@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+struct Global {
+    static var facebookClientID = "1660470584023500"
+    static var facebookRedirectURI = "fb1660470584023500://authorize"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

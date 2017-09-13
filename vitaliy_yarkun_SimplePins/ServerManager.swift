@@ -19,50 +19,11 @@ class ServerManager {
     typealias LoginCompletion = (_ success: Bool) -> Void
     
     lazy var service: ServiceProtocol = AlamofireService()
-    
 }
 
-//extension ServerManager {
-//    
-//    fileprivate enum Router: URLRequestConvertible {
-//        
-//        //MARK: - Router case
-//        case login
-//        
-//        //MARK: - Base URL
-//        private var baseURLString: String {
-//            return "https://graph.facebook.com/"
-//        }
-//        
-//        //MARK: - HTTP Method
-//        private var method: HTTPMethod {
-//            
-//            switch self {
-//            case .login:
-//                return .get
-//            }
-//        }
-//        
-//        //MARK: - Path
-//        private var path: String {
-//            switch self {
-//            case .login:
-//                return "v2.10/oauth/access_token"
-//            }
-//        }
-//        
-////        //MARK: - Content type
-////        private var contentType: String {
-////            return "application/json"
-////        }
-//        
-//        //MARK: - Headers
-//        private func addHeaders(for request: inout URLRequest) {
-//            
-//            request.setValue("", forHTTPHeaderField: <#T##String#>)
-//        }
-//    }
-//}
+
+    
+    
 
 
 

@@ -16,6 +16,7 @@
 		EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C81F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld */; };
 		EF9E62CC1F683E71001ECFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62CB1F683E71001ECFF5 /* Assets.xcassets */; };
 		EF9E62CF1F683E71001ECFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62CD1F683E71001ECFF5 /* LaunchScreen.storyboard */; };
+		EFE167891F693D6300CCE64C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167881F693D6300CCE64C /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EF9E62CB1F683E71001ECFF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF9E62CE1F683E71001ECFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9E62D01F683E71001ECFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFE167881F693D6300CCE64C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				EF9E62C81F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld */,
 				EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */,
 				EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */,
+				EFE167881F693D6300CCE64C /* Router.swift */,
 			);
 			path = vitaliy_yarkun_SimplePins;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */,
 				EF9E62C41F683E71001ECFF5 /* ViewController.swift in Sources */,
 				EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */,
+				EFE167891F693D6300CCE64C /* Router.swift in Sources */,
 				EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
