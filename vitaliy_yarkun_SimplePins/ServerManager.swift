@@ -16,9 +16,32 @@ protocol ServiceProtocol {
 
 class ServerManager {
     
-    typealias LoginCompletion = (_ success: Bool) -> Void
+    //MARK: - Completions
+    typealias GetTokenCompletion = (_ token: String?) -> Void
     
+    //MARK: - Properties
     lazy var service: ServiceProtocol = AlamofireService()
+    
+    //MARK: - Request methods
+    @discardableResult
+    func getAccessToken(client_id: String, redirect_uri: String, client_secret: String, code: String, completion: @escaping GetTokenCompletion) -> DataRequest {
+        let request = Router.getAccessToken(client_id: client_id, redirect_uri: redirect_uri, client_secret: client_secret, code: code)
+        return self.service.request(request)
+            .validate(statusCode: 200..<300)
+            .responseJSON(completionHandler: { (response) in
+                var token: String?
+                
+                switch response.result {
+                case .success(let JSON):
+                    if let responseJSON = JSON as? [String : Any] {
+                        token = responseJSON["access_token"] as? String
+                    }
+                case .failure:
+                    break;
+                }
+                completion(token)
+            })
+    }
 }
 
 

@@ -43,10 +43,24 @@ class LoginViewController: UIViewController {
         array  = urlString.components(separatedBy: separator)
         
         if let codeString = array?.last {
-            LocalStore().loginCode = codeString
+            let finalCodeString = codeString.replacingOccurrences(of: "#_=_", with: "")
+            LocalStore().loginCode = finalCodeString
             navigationController?.popViewController(animated: true)
+            getToken()
         }
-    }   
+    }
+    
+    fileprivate func getToken() {
+        
+        ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: LocalStore().loginCode) { (token) in
+            if let token = token {
+                User.token = token
+                print("true")
+            } else {
+                print("false")
+            }
+        }
+    }
 }
 
 //MARK: - UIWebViewDelegate
