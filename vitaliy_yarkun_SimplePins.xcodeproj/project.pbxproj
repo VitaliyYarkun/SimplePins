@@ -24,7 +24,6 @@
 		EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678B1F6947DF00CCE64C /* LocalStore.swift */; };
 		EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */; };
 		EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167921F69512B00CCE64C /* MapViewController.swift */; };
-		EFE167961F6951DB00CCE64C /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167951F6951DB00CCE64C /* CurrentUser.swift */; };
 		EFE167981F69ABE100CCE64C /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167971F69ABE100CCE64C /* DatabaseController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		EFE1678B1F6947DF00CCE64C /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EFE167921F69512B00CCE64C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		EFE167951F6951DB00CCE64C /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		EFE167971F69ABE100CCE64C /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */,
-				EFE167941F6951CD00CCE64C /* Models */,
+				EFC19D8A1F6ADB34002FBE72 /* CoreDataModels */,
 				EFE167911F694D5F00CCE64C /* Modules */,
 				EFE1678F1F694D2E00CCE64C /* ViewControllers */,
 				EFE167901F694D4600CCE64C /* SupportingFiles */,
@@ -164,15 +162,6 @@
 				EFE1678A1F69458D00CCE64C /* Network */,
 			);
 			name = Modules;
-			sourceTree = "<group>";
-		};
-		EFE167941F6951CD00CCE64C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EFE167951F6951DB00CCE64C /* CurrentUser.swift */,
-				EFC19D8A1F6ADB34002FBE72 /* CoreDataModels */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +300,6 @@
 				EFC19D881F6ADB0B002FBE72 /* Pin+CoreDataClass.swift in Sources */,
 				EFE167891F693D6300CCE64C /* Router.swift in Sources */,
 				EFC19D871F6ADB0B002FBE72 /* User+CoreDataProperties.swift in Sources */,
-				EFE167961F6951DB00CCE64C /* CurrentUser.swift in Sources */,
 				EFC19D891F6ADB0B002FBE72 /* Pin+CoreDataProperties.swift in Sources */,
 				EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */,
 			);

@@ -52,12 +52,20 @@ class LoginViewController: UIViewController {
     
     fileprivate func getToken() {
         
-        ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: LocalStore().loginCode) { (token) in
+        ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: LocalStore().loginCode) { [weak self](token) in
             if let token = token {
-                CurrentUser.token = token
-                print("true")
+                self?.getUserInfo(from: token)
             } else {
                 print("false")
+            }
+        }
+    }
+    
+    fileprivate func getUserInfo(from token: String) {
+        ServerManager().inspect(token: token, appAccessToken: Global.facebookAppAccessToken) { [weak self](userID, isValid) in
+            if let userID = userID, let isValid = isValid, isValid {
+                let lVC: MapViewController = MapViewController(with: userID, token: token)
+                self?.navigationController?.pushViewController(lVC, animated: true)
             }
         }
     }

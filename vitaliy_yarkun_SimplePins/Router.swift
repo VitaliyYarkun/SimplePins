@@ -29,8 +29,10 @@ enum Router: URLRequestConvertible {
         switch self {
         case .login:
             return "https://www.facebook.com"
-        case .getAccessToken, .inspectToken:
+        case .getAccessToken:
             return "https://graph.facebook.com"
+        case  .inspectToken:
+            return "graph.facebook.com"
         }
     }
     
@@ -49,7 +51,7 @@ enum Router: URLRequestConvertible {
             return "/v2.10/oauth/access_token?client_id=\(client_id)&redirect_uri=\(redirect_uri)&client_secret=\(client_secret)&code=\(code)"
         
         case .inspectToken(let token, let appAccessToken):
-            return "/debug_token?input_token=\(token)&access_token=\(appAccessToken)"
+            return "/debug_token?input_token=\(token)&access_token=\(appAccessToken)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         }
     }
     
