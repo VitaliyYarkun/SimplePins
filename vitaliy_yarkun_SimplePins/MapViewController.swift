@@ -8,16 +8,22 @@
 
 import UIKit
 import CoreData
+import MapKit
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     //MARK: - Properties
-    private lazy var managedContext:NSManagedObjectContext = {
+    fileprivate lazy var managedContext:NSManagedObjectContext = {
         return DatabaseController.getContext()
     }()
     var currentUser: User?
     var token: String!
     var userID: String!
+    
+    let locationManager = CLLocationManager()
+    var startDragLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
     
     //MARK: - ViewController lifecycle
@@ -25,6 +31,14 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         loadUser()
+        loadUserPins()
+        
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(_ :)))
+        tapGesture.numberOfTapsRequired = 1
+        mapView.addGestureRecognizer(tapGesture)
+        
+        mapView.showsUserLocation = true
+        checkLocationAuthorizationStatus()
     }
     
     func loadUser() {
@@ -51,4 +65,124 @@ class MapViewController: UIViewController {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
     }
+    
+    func loadUserPins() {
+        
+        guard let pins = currentUser?.pins else { return }
+        mapView.removeAnnotations(mapView.annotations)
+        for pin in pins {
+            if let lPin = pin as? Pin {
+                let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lPin.latitude, longitude: lPin.longitude)
+                let annotation: MKPointAnnotation = MKPointAnnotation()
+                annotation.coordinate = coordinate
+                annotation.title = "Deletion"
+                annotation.subtitle = "Tap the button on the right to delete the pin"
+                mapView.addAnnotation(annotation)
+            }
+        }
+    }
+    
+    func getPinFrom(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> Pin? {
+        let predicate = NSPredicate(format: "%K == %lf && %K == %lf", #keyPath(Pin.latitude), (latitude), #keyPath(Pin.longitude), (longitude))
+        let results = currentUser?.pins?.filtered(using: predicate)
+        return results?.first as? Pin
+    }
+    
+    func checkLocationAuthorizationStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func tap(_ recognizer: UITapGestureRecognizer) {
+        
+        let point = recognizer.location(in: mapView)
+        let coordinate: CLLocationCoordinate2D = mapView.convert(point, toCoordinateFrom: self.view)
+        
+        let pinEntity = NSEntityDescription.entity(forEntityName: "Pin", in: managedContext)
+        let pin = Pin(entity: pinEntity!, insertInto: managedContext)
+        pin.longitude = coordinate.longitude
+        pin.latitude = coordinate.latitude
+        currentUser?.addToPins(pin)
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Save error: \(error), description: \(error.userInfo)")
+        }
+        loadUserPins()
+    }
+
+}
+
+extension MapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView{
+            
+            if let pin = getPinFrom(latitude: (view.annotation?.coordinate.latitude)!, longitude: (view.annotation?.coordinate.longitude)!) {
+                
+                managedContext.delete(pin)
+                do {
+                    try managedContext.save()
+                    loadUserPins()
+                } catch let error as NSError {
+                    print("Saving error: \(error), description: \(error.userInfo)")
+                }
+            }
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        
+        let region: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 1000, 1000)
+        mapView.setRegion(mapView.regionThatFits(region), animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.isDraggable = true
+            pinView?.canShowCallout = true
+            let button = UIButton(type: .infoLight)
+            
+            pinView?.rightCalloutAccessoryView = button
+        }
+        else {
+            pinView?.annotation = annotation
+        }
+        
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        
+        if oldState == .starting {
+            startDragLocation.latitude = (view.annotation?.coordinate.latitude)!
+            startDragLocation.longitude =  (view.annotation?.coordinate.longitude)!
+        }
+        if newState == .ending {
+            _ = view.annotation?.coordinate
+            if let pin = getPinFrom(latitude: startDragLocation.latitude, longitude: startDragLocation.longitude) {
+                
+                pin.latitude = (view.annotation?.coordinate.latitude)!
+                pin.longitude = (view.annotation?.coordinate.longitude)!
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Saving error: \(error), description: \(error.userInfo)")
+                }
+            }
+            
+        }
+    }
+
 }

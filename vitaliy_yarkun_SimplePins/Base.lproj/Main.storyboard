@@ -59,6 +59,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DEJ-R6-uwc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="KVQ-LL-Jvh" id="bRj-Pi-L2A"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,6 +72,9 @@
                             <constraint firstAttribute="trailing" secondItem="DEJ-R6-uwc" secondAttribute="trailing" id="o4J-Nv-Pyj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="DEJ-R6-uwc" id="JsR-I5-t4F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUQ-fm-roG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
