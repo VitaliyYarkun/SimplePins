@@ -49,11 +49,18 @@ final class MapViewController: UIViewController {
             target: self,
             action: #selector(logOutAction(sender:))
         )
+        
+        let leftButtonItem = UIBarButtonItem.init(
+            title: "Back",
+            style: .done,
+            target: self,
+            action: #selector(backAction(sender:))
+        )
         self.navigationItem.rightBarButtonItem = rightButtonItem
+        self.navigationItem.leftBarButtonItem = leftButtonItem
     }
     
     func logOutAction(sender: UIBarButtonItem) {
-        
         let storage = HTTPCookieStorage.shared
         for cookie in storage.cookies! {
             storage.deleteCookie(cookie)
@@ -64,6 +71,10 @@ final class MapViewController: UIViewController {
         } catch let error as NSError {
             print("Saving error: \(error), description: \(error.userInfo)")
         }
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func backAction(sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewController(animated: true)
     }
     

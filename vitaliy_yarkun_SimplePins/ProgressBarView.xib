@@ -18,7 +18,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHG-yb-bzw" customClass="DotsLoader" customModule="vitaliy_yarkun_SimplePins" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="313.5" width="375" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ia4-qJ-DUd"/>
                     </constraints>
@@ -35,7 +35,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.5" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.77167166095890416" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="MHG-yb-bzw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0GZ-5m-h2q"/>
                 <constraint firstAttribute="trailing" secondItem="MHG-yb-bzw" secondAttribute="trailing" id="HIw-LS-pt2"/>
