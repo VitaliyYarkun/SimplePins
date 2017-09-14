@@ -45,27 +45,25 @@ class LoginViewController: UIViewController {
         if let codeString = array?.last {
             let finalCodeString = codeString.replacingOccurrences(of: "#_=_", with: "")
             LocalStore().loginCode = finalCodeString
-            navigationController?.popViewController(animated: true)
             getToken()
         }
     }
     
     fileprivate func getToken() {
         
-        ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: LocalStore().loginCode) { [weak self](token) in
+        ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: LocalStore().loginCode) { (token) in
             if let token = token {
-                self?.getUserInfo(from: token)
+                ServerManager().inspect(token: token, appAccessToken: Global.facebookAppAccessToken, completion: { (userID, isValid) in
+                    if let userID = userID, let isValid = isValid, isValid {
+                        let lVC = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                        lVC.userID = userID
+                        lVC.token = token
+                        self.navigationController?.pushViewController(lVC, animated: true)
+                    }
+                })
+                
             } else {
                 print("false")
-            }
-        }
-    }
-    
-    fileprivate func getUserInfo(from token: String) {
-        ServerManager().inspect(token: token, appAccessToken: Global.facebookAppAccessToken) { [weak self](userID, isValid) in
-            if let userID = userID, let isValid = isValid, isValid {
-                let lVC: MapViewController = MapViewController(with: userID, token: token)
-                self?.navigationController?.pushViewController(lVC, animated: true)
             }
         }
     }
