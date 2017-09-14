@@ -9,17 +9,19 @@
 import Foundation
 import CoreData
 
-class DatabaseController {
+final class DatabaseController {
     
+    //MARK: - Init
     private init() {
         
     }
     
+    //MARK: - Methods
     class func getContext () -> NSManagedObjectContext {
         return DatabaseController.managedObjectContext
     }
-    // MARK: - Core Data stack
     
+    //MARK: - Core Data stack
     static var managedObjectContext: NSManagedObjectContext = {
         
         var applicationDocumentsDirectory: URL = {
@@ -64,7 +66,6 @@ class DatabaseController {
     }()
     
     // MARK: - Core Data Saving support
-    
     class func saveContext () {
         if managedObjectContext.hasChanges {
             do {

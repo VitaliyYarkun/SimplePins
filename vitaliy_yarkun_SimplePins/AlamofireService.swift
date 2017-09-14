@@ -8,7 +8,7 @@
 
 import Alamofire
 
-class AlamofireService: ServiceProtocol {
+final class AlamofireService: ServiceProtocol {
     
     @discardableResult
     func request(_ request: URLRequestConvertible) -> DataRequest {

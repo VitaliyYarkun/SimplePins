@@ -6,8 +6,11 @@
 //  Copyright © 2017 Vitaliy Yarkun. All rights reserved.
 //
 
-class CurrentUser{
+import CoreData
+
+final class CurrentUser{
     
+    //MARK: - Properties
     static var token: String? {
         get {
             return LocalStore().accessToken
@@ -16,4 +19,8 @@ class CurrentUser{
             LocalStore().accessToken = newValue!
         }
     }
+    
+    private lazy var managedContext:NSManagedObjectContext = {
+        return DatabaseController.getContext()
+    }()
 }

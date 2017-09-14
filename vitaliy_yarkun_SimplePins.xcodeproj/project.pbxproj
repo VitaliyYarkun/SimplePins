@@ -104,11 +104,11 @@
 		EF9E62C01F683E71001ECFF5 /* vitaliy_yarkun_SimplePins */ = {
 			isa = PBXGroup;
 			children = (
+				EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */,
 				EFE167941F6951CD00CCE64C /* Models */,
 				EFE167911F694D5F00CCE64C /* Modules */,
 				EFE1678F1F694D2E00CCE64C /* ViewControllers */,
 				EFE167901F694D4600CCE64C /* SupportingFiles */,
-				EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */,
 			);
 			path = vitaliy_yarkun_SimplePins;
 			sourceTree = "<group>";

@@ -22,35 +22,34 @@ enum Router: URLRequestConvertible {
     //MARK: - Router case
     case login(client_id: String, redirect_uri: String)
     case getAccessToken(client_id: String, redirect_uri: String, client_secret: String, code: String)
+    case inspectToken(token: String, appAccessToken: String)
     
     //MARK: - Base URL
     private var baseURLString: String {
         switch self {
         case .login:
-            return "https://www.facebook.com/v2.10"
-        case .getAccessToken:
-            return "https://graph.facebook.com/v2.10"
+            return "https://www.facebook.com"
+        case .getAccessToken, .inspectToken:
+            return "https://graph.facebook.com"
         }
     }
     
     //MARK: - HTTP Method
     private var method: HTTPMethod {
-        switch self {
-        case .getAccessToken:
-            return .get
-        default:
-            return .get
-        }
+        return .get
     }
     
     //MARK: - Path
     private var path: String {
         switch self {
         case .login(let client_id, let redirect_uri):
-            return "/dialog/oauth?client_id=\(client_id)&display=\(loginDisplayType)&response_type=\(loginResponseType)&redirect_uri=\(redirect_uri)"
+            return "/v2.10/dialog/oauth?client_id=\(client_id)&display=\(loginDisplayType)&response_type=\(loginResponseType)&redirect_uri=\(redirect_uri)"
         
         case .getAccessToken(let client_id, let redirect_uri, let client_secret, let code):
-            return "/oauth/access_token?client_id=\(client_id)&redirect_uri=\(redirect_uri)&client_secret=\(client_secret)&code=\(code)"
+            return "/v2.10/oauth/access_token?client_id=\(client_id)&redirect_uri=\(redirect_uri)&client_secret=\(client_secret)&code=\(code)"
+        
+        case .inspectToken(let token, let appAccessToken):
+            return "/debug_token?input_token=\(token)&access_token=\(appAccessToken)"
         }
     }
     
@@ -59,7 +58,7 @@ enum Router: URLRequestConvertible {
         var urlRequest = URLRequest(url: url)
         
         switch self {
-        case .getAccessToken:
+        case .getAccessToken, .inspectToken:
             urlRequest.httpMethod = self.method.rawValue
         default:
             break
