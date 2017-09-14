@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
         
         ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: LocalStore().loginCode) { (token) in
             if let token = token {
-                User.token = token
+                CurrentUser.token = token
                 print("true")
             } else {
                 print("false")

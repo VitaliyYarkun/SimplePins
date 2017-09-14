@@ -16,11 +16,15 @@
 		EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C81F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld */; };
 		EF9E62CC1F683E71001ECFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62CB1F683E71001ECFF5 /* Assets.xcassets */; };
 		EF9E62CF1F683E71001ECFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62CD1F683E71001ECFF5 /* LaunchScreen.storyboard */; };
+		EFC19D861F6ADB0B002FBE72 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC19D821F6ADB0B002FBE72 /* User+CoreDataClass.swift */; };
+		EFC19D871F6ADB0B002FBE72 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC19D831F6ADB0B002FBE72 /* User+CoreDataProperties.swift */; };
+		EFC19D881F6ADB0B002FBE72 /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC19D841F6ADB0B002FBE72 /* Pin+CoreDataClass.swift */; };
+		EFC19D891F6ADB0B002FBE72 /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC19D851F6ADB0B002FBE72 /* Pin+CoreDataProperties.swift */; };
 		EFE167891F693D6300CCE64C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167881F693D6300CCE64C /* Router.swift */; };
 		EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678B1F6947DF00CCE64C /* LocalStore.swift */; };
 		EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */; };
 		EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167921F69512B00CCE64C /* MapViewController.swift */; };
-		EFE167961F6951DB00CCE64C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167951F6951DB00CCE64C /* User.swift */; };
+		EFE167961F6951DB00CCE64C /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167951F6951DB00CCE64C /* CurrentUser.swift */; };
 		EFE167981F69ABE100CCE64C /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167971F69ABE100CCE64C /* DatabaseController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,11 +42,15 @@
 		EF9E62CB1F683E71001ECFF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF9E62CE1F683E71001ECFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9E62D01F683E71001ECFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFC19D821F6ADB0B002FBE72 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EFC19D831F6ADB0B002FBE72 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EFC19D841F6ADB0B002FBE72 /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataClass.swift"; path = "../Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EFC19D851F6ADB0B002FBE72 /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataProperties.swift"; path = "../Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EFE167881F693D6300CCE64C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EFE1678B1F6947DF00CCE64C /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EFE167921F69512B00CCE64C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		EFE167951F6951DB00CCE64C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFE167951F6951DB00CCE64C /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		EFE167971F69ABE100CCE64C /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +113,17 @@
 			path = vitaliy_yarkun_SimplePins;
 			sourceTree = "<group>";
 		};
+		EFC19D8A1F6ADB34002FBE72 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				EFC19D821F6ADB0B002FBE72 /* User+CoreDataClass.swift */,
+				EFC19D831F6ADB0B002FBE72 /* User+CoreDataProperties.swift */,
+				EFC19D841F6ADB0B002FBE72 /* Pin+CoreDataClass.swift */,
+				EFC19D851F6ADB0B002FBE72 /* Pin+CoreDataProperties.swift */,
+			);
+			name = CoreDataModels;
+			sourceTree = "<group>";
+		};
 		EFE1678A1F69458D00CCE64C /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +159,7 @@
 		EFE167911F694D5F00CCE64C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EFE167971F69ABE100CCE64C /* DatabaseController.swift */,
 				EFE1678B1F6947DF00CCE64C /* LocalStore.swift */,
 				EFE1678A1F69458D00CCE64C /* Network */,
 			);
@@ -149,8 +169,8 @@
 		EFE167941F6951CD00CCE64C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EFE167951F6951DB00CCE64C /* User.swift */,
-				EFE167971F69ABE100CCE64C /* DatabaseController.swift */,
+				EFE167951F6951DB00CCE64C /* CurrentUser.swift */,
+				EFC19D8A1F6ADB34002FBE72 /* CoreDataModels */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -281,14 +301,18 @@
 			files = (
 				EF9AC7C41F6904F2001F6C86 /* ServerManager.swift in Sources */,
 				EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */,
+				EFC19D861F6ADB0B002FBE72 /* User+CoreDataClass.swift in Sources */,
 				EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */,
 				EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */,
 				EFE167981F69ABE100CCE64C /* DatabaseController.swift in Sources */,
 				EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */,
 				EF9E62C41F683E71001ECFF5 /* LoginViewController.swift in Sources */,
 				EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */,
+				EFC19D881F6ADB0B002FBE72 /* Pin+CoreDataClass.swift in Sources */,
 				EFE167891F693D6300CCE64C /* Router.swift in Sources */,
-				EFE167961F6951DB00CCE64C /* User.swift in Sources */,
+				EFC19D871F6ADB0B002FBE72 /* User+CoreDataProperties.swift in Sources */,
+				EFE167961F6951DB00CCE64C /* CurrentUser.swift in Sources */,
+				EFC19D891F6ADB0B002FBE72 /* Pin+CoreDataProperties.swift in Sources */,
 				EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
