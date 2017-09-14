@@ -42,6 +42,7 @@ final class MapViewController: UIViewController {
         checkLocationAuthorizationStatus()
     }
     
+    //MARK: - Methods
     func loadUIElements() {
         let rightButtonItem = UIBarButtonItem.init(
             title: "Log out",
@@ -61,10 +62,8 @@ final class MapViewController: UIViewController {
     }
     
     func logOutAction(sender: UIBarButtonItem) {
-        let storage = HTTPCookieStorage.shared
-        for cookie in storage.cookies! {
-            storage.deleteCookie(cookie)
-        }
+        self.clearCookies()
+        
         managedContext.delete(currentUser!)
         do {
             try managedContext.save()
@@ -78,6 +77,33 @@ final class MapViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    func checkLocationAuthorizationStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func tap(_ recognizer: UITapGestureRecognizer) {
+        
+        let point = recognizer.location(in: mapView)
+        let coordinate: CLLocationCoordinate2D = mapView.convert(point, toCoordinateFrom: self.view)
+        
+        let pinEntity = NSEntityDescription.entity(forEntityName: "Pin", in: managedContext)
+        let pin = Pin(entity: pinEntity!, insertInto: managedContext)
+        pin.longitude = coordinate.longitude
+        pin.latitude = coordinate.latitude
+        currentUser?.addToPins(pin)
+        do {
+            try managedContext.save()
+            loadUserPins()
+        } catch let error as NSError {
+            print("Save error: \(error), description: \(error.userInfo)")
+        }
+    }
+
+    //MARK: - CoreData methods
     func loadUser() {
         let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)
         
@@ -122,34 +148,9 @@ final class MapViewController: UIViewController {
         return results?.first as? Pin
     }
     
-    func checkLocationAuthorizationStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            
-        } else {
-            locationManager.requestWhenInUseAuthorization()
-        }
-    }
-    
-    func tap(_ recognizer: UITapGestureRecognizer) {
-        
-        let point = recognizer.location(in: mapView)
-        let coordinate: CLLocationCoordinate2D = mapView.convert(point, toCoordinateFrom: self.view)
-        
-        let pinEntity = NSEntityDescription.entity(forEntityName: "Pin", in: managedContext)
-        let pin = Pin(entity: pinEntity!, insertInto: managedContext)
-        pin.longitude = coordinate.longitude
-        pin.latitude = coordinate.latitude
-        currentUser?.addToPins(pin)
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Save error: \(error), description: \(error.userInfo)")
-        }
-        loadUserPins()
     }
 
-}
-
+//MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -169,13 +170,11 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        
         let region: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 1000, 1000)
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         if annotation is MKUserLocation {
             return nil
         }
@@ -217,5 +216,4 @@ extension MapViewController: MKMapViewDelegate {
             }
         }
     }
-
 }

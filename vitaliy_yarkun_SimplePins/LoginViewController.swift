@@ -51,6 +51,16 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    fileprivate func checkForError(in urlString: String?) {
+        
+        guard let urlString = urlString else { return }
+        
+        let errorKeywoard = "error=access_denied"
+        guard (urlString.range(of:Global.facebookRedirectURI) != nil) &&  (urlString.range(of:errorKeywoard) != nil) else { return }
+        self.clearCookies()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     fileprivate func getToken() {
         guard loginCode != nil else { return }
         self.showProgressBar()
@@ -78,6 +88,7 @@ extension LoginViewController: UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         getCodeParameter(from: request.url?.absoluteString)
+        checkForError(in: request.url?.absoluteString)
         return true
     }
     

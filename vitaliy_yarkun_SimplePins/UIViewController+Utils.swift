@@ -27,4 +27,11 @@ extension UIViewController {
             }
         }
     }
+    
+    func clearCookies() {
+        let storage = HTTPCookieStorage.shared
+        for cookie in storage.cookies! {
+            storage.deleteCookie(cookie)
+        }
+    }
 }
