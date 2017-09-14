@@ -19,7 +19,7 @@ final class MapViewController: UIViewController {
         return DatabaseController.getContext()
     }()
     var currentUser: User?
-    var token: String!
+    var token: String?
     var userID: String!
     
     let locationManager = CLLocationManager()
@@ -50,10 +50,7 @@ final class MapViewController: UIViewController {
         do {
             let results = try managedContext.fetch(userFetch)
             if results.count > 0 {
-                let user = results.first
-                user?.accessToken = token
-                currentUser = user
-                try managedContext.save()
+                currentUser = results.first
             } else {
                 let user = User(entity: userEntity!, insertInto: managedContext)
                 user.userID = userID
