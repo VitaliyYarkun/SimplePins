@@ -53,10 +53,7 @@ final class MapViewController: UIViewController {
     }
     
     func logOutAction(sender: UIBarButtonItem) {
-        /*guard let userID = currentUser?.userID, let token = currentUser?.accessToken else { return }
-        ServerManager().logOut(userID: userID, token: token) { (success) in
-            
-        }*/
+        
         let storage = HTTPCookieStorage.shared
         for cookie in storage.cookies! {
             storage.deleteCookie(cookie)
@@ -207,7 +204,6 @@ extension MapViewController: MKMapViewDelegate {
                     print("Saving error: \(error), description: \(error.userInfo)")
                 }
             }
-            
         }
     }
 

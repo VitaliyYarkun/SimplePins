@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6CBB948EA74B5A582A681A1C /* Pods_vitaliy_yarkun_SimplePins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF66530809A1C917E722724 /* Pods_vitaliy_yarkun_SimplePins.framework */; };
+		EF87CFF91F6B215300A653DD /* DotsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87CFF81F6B215300A653DD /* DotsLoader.swift */; };
+		EF87CFFC1F6B21C100A653DD /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87CFFB1F6B21C100A653DD /* UIViewController+Utils.swift */; };
+		EF87CFFE1F6B21FF00A653DD /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87CFFD1F6B21FF00A653DD /* ProgressBarView.swift */; };
+		EF87D0001F6B220F00A653DD /* ProgressBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF87CFFF1F6B220F00A653DD /* ProgressBarView.xib */; };
+		EF87D0021F6B236900A653DD /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87D0011F6B236900A653DD /* UIView+Utils.swift */; };
 		EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */; };
 		EF9AC7C41F6904F2001F6C86 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */; };
 		EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */; };
@@ -30,6 +35,11 @@
 		1FE216A7BAE6F0A5038A2F8D /* Pods-vitaliy_yarkun_SimplePins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vitaliy_yarkun_SimplePins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vitaliy_yarkun_SimplePins/Pods-vitaliy_yarkun_SimplePins.debug.xcconfig"; sourceTree = "<group>"; };
 		3AF66530809A1C917E722724 /* Pods_vitaliy_yarkun_SimplePins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vitaliy_yarkun_SimplePins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2654A1661ABE756BA0446E /* Pods-vitaliy_yarkun_SimplePins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vitaliy_yarkun_SimplePins.release.xcconfig"; path = "Pods/Target Support Files/Pods-vitaliy_yarkun_SimplePins/Pods-vitaliy_yarkun_SimplePins.release.xcconfig"; sourceTree = "<group>"; };
+		EF87CFF81F6B215300A653DD /* DotsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotsLoader.swift; sourceTree = "<group>"; };
+		EF87CFFB1F6B21C100A653DD /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		EF87CFFD1F6B21FF00A653DD /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		EF87CFFF1F6B220F00A653DD /* ProgressBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarView.xib; sourceTree = "<group>"; };
+		EF87D0011F6B236900A653DD /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		EF9AC7C11F69048B001F6C86 /* AlamofireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
 		EF9AC7C31F6904F2001F6C86 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		EF9E62BE1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vitaliy_yarkun_SimplePins.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +89,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EF87CFFA1F6B21A900A653DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF87CFFB1F6B21C100A653DD /* UIViewController+Utils.swift */,
+				EF87D0011F6B236900A653DD /* UIView+Utils.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		EF9E62B51F683E71001ECFF5 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +121,7 @@
 			children = (
 				EF9E62C11F683E71001ECFF5 /* AppDelegate.swift */,
 				EFC19D8A1F6ADB34002FBE72 /* CoreDataModels */,
+				EF87CFFA1F6B21A900A653DD /* Extensions */,
 				EFE167911F694D5F00CCE64C /* Modules */,
 				EFE1678F1F694D2E00CCE64C /* ViewControllers */,
 				EFE167901F694D4600CCE64C /* SupportingFiles */,
@@ -156,6 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				EFE167971F69ABE100CCE64C /* DatabaseController.swift */,
+				EF87CFF81F6B215300A653DD /* DotsLoader.swift */,
+				EF87CFFD1F6B21FF00A653DD /* ProgressBarView.swift */,
+				EF87CFFF1F6B220F00A653DD /* ProgressBarView.xib */,
 				EFE1678A1F69458D00CCE64C /* Network */,
 			);
 			name = Modules;
@@ -225,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF9E62CF1F683E71001ECFF5 /* LaunchScreen.storyboard in Resources */,
+				EF87D0001F6B220F00A653DD /* ProgressBarView.xib in Resources */,
 				EF9E62CC1F683E71001ECFF5 /* Assets.xcassets in Resources */,
 				EF9E62C71F683E71001ECFF5 /* Main.storyboard in Resources */,
 			);
@@ -290,6 +314,7 @@
 				EFC19D911F6B050D002FBE72 /* User+CoreDataClass.swift in Sources */,
 				EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */,
 				EFE167981F69ABE100CCE64C /* DatabaseController.swift in Sources */,
+				EF87CFFE1F6B21FF00A653DD /* ProgressBarView.swift in Sources */,
 				EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */,
 				EF9E62C41F683E71001ECFF5 /* LoginViewController.swift in Sources */,
 				EF9E62CA1F683E71001ECFF5 /* vitaliy_yarkun_SimplePins.xcdatamodeld in Sources */,
@@ -297,7 +322,10 @@
 				EFC19D921F6B050D002FBE72 /* User+CoreDataProperties.swift in Sources */,
 				EFE167891F693D6300CCE64C /* Router.swift in Sources */,
 				EFC19D891F6ADB0B002FBE72 /* Pin+CoreDataProperties.swift in Sources */,
+				EF87D0021F6B236900A653DD /* UIView+Utils.swift in Sources */,
+				EF87CFF91F6B215300A653DD /* DotsLoader.swift in Sources */,
 				EF9E62C21F683E71001ECFF5 /* AppDelegate.swift in Sources */,
+				EF87CFFC1F6B21C100A653DD /* UIViewController+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

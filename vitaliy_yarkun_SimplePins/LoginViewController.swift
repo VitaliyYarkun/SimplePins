@@ -30,6 +30,7 @@ final class LoginViewController: UIViewController {
         }
         guard let lRequest = request else { return }
         
+        self.showProgressBar()
         webView.loadRequest(lRequest)
     }
 
@@ -52,9 +53,11 @@ final class LoginViewController: UIViewController {
     
     fileprivate func getToken() {
         guard loginCode != nil else { return }
+        self.showProgressBar()
         ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: loginCode!) { (token) in
             if let token = token {
                 ServerManager().inspect(token: token, appAccessToken: Global.facebookAppAccessToken, completion: { (userID, isValid) in
+                    self.hideProgressBar()
                     if let userID = userID, let isValid = isValid, isValid {
                         let lVC = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
                         lVC.userID = userID
@@ -64,7 +67,7 @@ final class LoginViewController: UIViewController {
                 })
                 
             } else {
-                print("false")
+                self.hideProgressBar()
             }
         }
     }
@@ -74,9 +77,12 @@ final class LoginViewController: UIViewController {
 extension LoginViewController: UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        
         getCodeParameter(from: request.url?.absoluteString)
         return true
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        self.hideProgressBar()
     }
 }
 
