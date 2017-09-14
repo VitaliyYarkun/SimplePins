@@ -21,7 +21,6 @@
 		EFC19D911F6B050D002FBE72 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC19D8F1F6B050D002FBE72 /* User+CoreDataClass.swift */; };
 		EFC19D921F6B050D002FBE72 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC19D901F6B050D002FBE72 /* User+CoreDataProperties.swift */; };
 		EFE167891F693D6300CCE64C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167881F693D6300CCE64C /* Router.swift */; };
-		EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678B1F6947DF00CCE64C /* LocalStore.swift */; };
 		EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */; };
 		EFE167931F69512B00CCE64C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167921F69512B00CCE64C /* MapViewController.swift */; };
 		EFE167981F69ABE100CCE64C /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE167971F69ABE100CCE64C /* DatabaseController.swift */; };
@@ -46,7 +45,6 @@
 		EFC19D8F1F6B050D002FBE72 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EFC19D901F6B050D002FBE72 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EFE167881F693D6300CCE64C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		EFE1678B1F6947DF00CCE64C /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		EFE1678D1F694C9000CCE64C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EFE167921F69512B00CCE64C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EFE167971F69ABE100CCE64C /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				EFE167971F69ABE100CCE64C /* DatabaseController.swift */,
-				EFE1678B1F6947DF00CCE64C /* LocalStore.swift */,
 				EFE1678A1F69458D00CCE64C /* Network */,
 			);
 			name = Modules;
@@ -290,7 +287,6 @@
 			files = (
 				EF9AC7C41F6904F2001F6C86 /* ServerManager.swift in Sources */,
 				EFE1678E1F694C9000CCE64C /* WelcomeViewController.swift in Sources */,
-				EFE1678C1F6947DF00CCE64C /* LocalStore.swift in Sources */,
 				EFC19D911F6B050D002FBE72 /* User+CoreDataClass.swift in Sources */,
 				EF9AC7C21F69048B001F6C86 /* AlamofireService.swift in Sources */,
 				EFE167981F69ABE100CCE64C /* DatabaseController.swift in Sources */,

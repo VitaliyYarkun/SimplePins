@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,24 +23,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkm-bK-BpG">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <rect key="frame" x="57" y="564" width="262.5" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="arF-NQ-YMf"/>
-                                    <constraint firstAttribute="width" constant="46" id="w14-i1-64Y"/>
+                                    <constraint firstAttribute="height" constant="50" id="arF-NQ-YMf"/>
                                 </constraints>
-                                <state key="normal" title="Login"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="FeM-lo-a0c"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Pins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fS-qy-l6q">
+                                <rect key="frame" x="91" y="311.5" width="193" height="45.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dkm-bK-BpG" firstAttribute="centerY" secondItem="BPM-UA-D2K" secondAttribute="centerY" id="frt-bJ-oTQ"/>
+                            <constraint firstItem="2fS-qy-l6q" firstAttribute="centerY" secondItem="BPM-UA-D2K" secondAttribute="centerY" id="Zjh-Ru-RGP"/>
+                            <constraint firstItem="dkm-bK-BpG" firstAttribute="width" secondItem="BPM-UA-D2K" secondAttribute="width" multiplier="0.7" id="eaa-sW-uSM"/>
                             <constraint firstItem="dkm-bK-BpG" firstAttribute="centerX" secondItem="BPM-UA-D2K" secondAttribute="centerX" id="g8A-32-sJ5"/>
+                            <constraint firstItem="2fS-qy-l6q" firstAttribute="centerX" secondItem="BPM-UA-D2K" secondAttribute="centerX" id="jfR-eY-iWV"/>
+                            <constraint firstItem="VWp-Py-Nsq" firstAttribute="top" secondItem="dkm-bK-BpG" secondAttribute="bottom" constant="53" id="xwK-3L-pkn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0dA-qO-zJY"/>
+                    <connections>
+                        <outlet property="loginOutlet" destination="dkm-bK-BpG" id="n18-im-hVr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERd-Zn-Msz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +79,7 @@
                                 </connections>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gKx-QQ-gHe" firstAttribute="top" secondItem="DEJ-R6-uwc" secondAttribute="bottom" id="Nka-N8-qop"/>
                             <constraint firstItem="DEJ-R6-uwc" firstAttribute="top" secondItem="Hda-2N-70I" secondAttribute="top" id="PPV-RE-E4E"/>
@@ -97,7 +112,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zfd-IZ-qpT" secondAttribute="bottom" id="IuH-Si-brt"/>
                             <constraint firstAttribute="trailing" secondItem="Zfd-IZ-qpT" secondAttribute="trailing" id="Xcc-mC-HLc"/>

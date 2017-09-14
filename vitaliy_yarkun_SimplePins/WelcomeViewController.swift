@@ -11,12 +11,21 @@ import CoreData
 
 final class WelcomeViewController: UIViewController {
     
+    //MARK: - IBOutlet
+    @IBOutlet weak var loginOutlet: UIButton!
+    
+    //MARK: - Properties
     fileprivate lazy var managedContext:NSManagedObjectContext = {
         return DatabaseController.getContext()
     }()
     
+    //MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginOutlet.layer.borderWidth = 2
+        loginOutlet.layer.borderColor = UIColor.white.cgColor
+        loginOutlet.layer.cornerRadius = 10
         
         let userFetch: NSFetchRequest<User> = User.fetchRequest()
         do {
@@ -30,7 +39,6 @@ final class WelcomeViewController: UIViewController {
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
-
     }
     
 }

@@ -14,7 +14,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     
     //MARK: - Properties
-    
+    var loginCode: String?
     
     //MARK: - ViewController lifecycle
     override func viewDidLoad() {
@@ -45,14 +45,14 @@ final class LoginViewController: UIViewController {
         
         if let codeString = array?.last {
             let finalCodeString = codeString.replacingOccurrences(of: "#_=_", with: "")
-            LocalStore().loginCode = finalCodeString
+            loginCode = finalCodeString
             getToken()
         }
     }
     
     fileprivate func getToken() {
-        
-        ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: LocalStore().loginCode) { (token) in
+        guard loginCode != nil else { return }
+        ServerManager().getAccessToken(client_id: Global.facebookClientID, redirect_uri: Global.facebookRedirectURI, client_secret: Global.facebookClientSecret, code: loginCode!) { (token) in
             if let token = token {
                 ServerManager().inspect(token: token, appAccessToken: Global.facebookAppAccessToken, completion: { (userID, isValid) in
                     if let userID = userID, let isValid = isValid, isValid {
