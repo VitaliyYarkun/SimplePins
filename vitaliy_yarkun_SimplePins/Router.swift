@@ -32,6 +32,7 @@ enum Router: URLRequestConvertible {
         case .getAccessToken, .inspectToken:
             return "https://graph.facebook.com"
         }
+        
     }
     
     //MARK: - HTTP Method
@@ -49,7 +50,7 @@ enum Router: URLRequestConvertible {
             return "/v2.10/oauth/access_token?client_id=\(client_id)&redirect_uri=\(redirect_uri)&client_secret=\(client_secret)&code=\(code)"
         
         case .inspectToken(let token, let appAccessToken):
-            return "/debug_token?input_token=\(token)&access_token=\(appAccessToken)".addingPercentEscapes(using: .utf8)!
+            return "/debug_token?input_token=\(token)&access_token=\(appAccessToken)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         }
     }
     

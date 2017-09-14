@@ -2,4 +2,118 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vitaliy_yarkun_SimplePins/LoginViewController.swift"
+            timestampString = "527111470.643725"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "getToken()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "vitaliy_yarkun_SimplePins.LoginViewController.((getToken in _739768A8811F307A599B3011291DF76F) () -&gt; ()).(closure #1)"
+                  moduleName = "vitaliy_yarkun_SimplePins"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AdamFox/Projects/vitaliy_yarkun_SimplePins/vitaliy_yarkun_SimplePins/LoginViewController.swift"
+                  timestampString = "527112849.81042"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "vitaliy_yarkun_SimplePins.LoginViewController.((getToken in _739768A8811F307A599B3011291DF76F) () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "vitaliy_yarkun_SimplePins"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AdamFox/Projects/vitaliy_yarkun_SimplePins/vitaliy_yarkun_SimplePins/LoginViewController.swift"
+                  timestampString = "527112849.813016"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vitaliy_yarkun_SimplePins/LoginViewController.swift"
+            timestampString = "527111470.643725"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getToken()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "vitaliy_yarkun_SimplePins.LoginViewController.((getToken in _739768A8811F307A599B3011291DF76F) () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "vitaliy_yarkun_SimplePins"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AdamFox/Projects/vitaliy_yarkun_SimplePins/vitaliy_yarkun_SimplePins/LoginViewController.swift"
+                  timestampString = "527112849.817034"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "vitaliy_yarkun_SimplePins.LoginViewController.((getToken in _739768A8811F307A599B3011291DF76F) () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "vitaliy_yarkun_SimplePins"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AdamFox/Projects/vitaliy_yarkun_SimplePins/vitaliy_yarkun_SimplePins/LoginViewController.swift"
+                  timestampString = "527112849.818538"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vitaliy_yarkun_SimplePins/ServerManager.swift"
+            timestampString = "527112848.706359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "inspect(token:appAccessToken:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

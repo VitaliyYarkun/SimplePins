@@ -30,6 +30,7 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadUIElements()
         loadUser()
         loadUserPins()
         
@@ -39,6 +40,34 @@ final class MapViewController: UIViewController {
         
         mapView.showsUserLocation = true
         checkLocationAuthorizationStatus()
+    }
+    
+    func loadUIElements() {
+        let rightButtonItem = UIBarButtonItem.init(
+            title: "Log out",
+            style: .done,
+            target: self,
+            action: #selector(logOutAction(sender:))
+        )
+        self.navigationItem.rightBarButtonItem = rightButtonItem
+    }
+    
+    func logOutAction(sender: UIBarButtonItem) {
+        /*guard let userID = currentUser?.userID, let token = currentUser?.accessToken else { return }
+        ServerManager().logOut(userID: userID, token: token) { (success) in
+            
+        }*/
+        let storage = HTTPCookieStorage.shared
+        for cookie in storage.cookies! {
+            storage.deleteCookie(cookie)
+        }
+        managedContext.delete(currentUser!)
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Saving error: \(error), description: \(error.userInfo)")
+        }
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func loadUser() {
